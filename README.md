@@ -46,6 +46,3 @@ EXECUTION
 10.Now, the user can fill up the fields with the review content of his choice and press predict to view the output.
 
 11.It can now be seen whether the review is fake or legitimate.
-
-**************************************************************************
-IF YOU ARE STILL UNABLE TO RUN THE PROJECT, REFER TO THE FAKE REVIEW DETECTION EXECUTION VIDEO TO SEE THE CMD AND HOW TO RUN.
