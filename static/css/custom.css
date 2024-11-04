@@ -1,0 +1,238 @@
+.navbar {
+    border-width: 0 0 1px;
+    border-radius: 0;
+    right: 0;
+    left: 0;
+    height: 82px;
+}
+
+.navbar.navbar-default {
+    border-bottom: none;
+}
+
+#menu.navbar-default {
+    background-color: rgba(0, 0, 0, .7);
+    border-color: rgba(231, 231, 231, 0);
+}
+
+#menu {
+    transition: all 0.8s;
+    background-color: rgba(248, 248, 248, 0);
+    border-color: rgba(231, 231, 231, 0);
+}
+#menu a.navbar-brand {
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 900;
+}
+.navbar-logo img {
+    width: 220px !important;
+    height: 80px !important;
+    margin-top: -15px;
+    position: relative;
+    z-index: 1;
+}
+
+.nopadding{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.navbar-toggle {
+    margin-top: 30px;
+    margin-right: 33px;
+    border: none;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #d99813;
+}
+.navbar-toggle .icon-bar {
+    width: 25px;
+    height: 3px;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+     border: none;
+}
+.navbar-collapse {
+    box-shadow: none;
+    /*background-color: #252525;*/
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background: none;
+}
+.navbar-nav {
+    text-align: center;
+    margin-top: 23px;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #d99813;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #d1d0d0;
+}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #d1d0d0;
+    background-color: transparent;
+}
+.container-fluid {
+     padding-right: 0;
+     padding-left: 0;
+}
+
+.carousel-indicators {
+    display: none;
+}
+
+.carousel [class*=carousel-control] {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: -25px 20px 0;
+    padding: 0;
+    border: 1px solid #fff;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+    opacity: .5;
+    background: 0 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+    margin: auto;
+    min-height:200px;
+}
+
+.carousel-control {
+    font-size: 12px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.text-color{
+    color: #d99813;
+}
+
+footer {
+    background-color: #222222;
+    padding: 15px;
+    margin-top: 10px;
+    color:#FFFFFF;
+}
+footer span {
+    width: 100%;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 10px;
+}
+
+h3{
+    text-align: center;
+}
+
+p{
+    font-size: 16px;
+    text-align: left;
+}
+blockquote{
+    text-align: left;
+}
+
+.m-t{
+    margin-top: 100px;
+}
+
+.font-black {
+    color: #000;
+}
+label {
+    font-weight: normal;
+}
+
+#check_in_date,#check_out_date{
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+}
+#check_code{
+    font-size: 13px;
+}
+
+.text-placeholder .form-control {
+    padding-left: 40px;
+}
+
+.pl40 {
+    padding-left: 40px;
+}
+.form-group-lg .form-control {
+    border-radius: 0;
+}
+.form-control {
+    font-size: 12px;
+    color: #333;
+    height: 34px;
+    border-radius: 3px;
+}
+.form-group .input-icon {
+    top: 41px;
+    position: absolute;
+    font-size: 17px;
+    opacity: .7;
+    left: 25px;
+}
+.check_in_date_icon, .check_out_date_icon {
+    cursor: pointer;
+}
+.gap {
+    height: 20px;
+    width: 100%;
+}
+.bookDirect {
+    color: #d1d0d0;
+    font-weight: 600;
+    letter-spacing: .56px;
+}
+.bookwidBtn {
+    position: relative;
+    background-color: #d99813;
+    border-radius: 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border: 1px solid #d99813!important;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+.disc-none{
+    list-style-type: none;
+}
+
+

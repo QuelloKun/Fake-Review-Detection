@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+  <div class="login">
+    <h1>Enter text below to know if the review is fake or not.</h1>
+    <h1 class="cover-heading"></h1>
+
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method=['POST']>
+
+      <textarea type="text" class="form-control  text-white" name="news" id="news" placeholder="Please enter the review"
+        rows="10"></textarea><br>
+
+      <label for="rating"> Enter Rating (b/w 1 and 5): </label>
+      <input type="number" id="rating" name="rating" min="1" max="5" style="margin-top: 20px; margin-bottom: 20px">
+
+      <label for="verified"> Verified Purchase: </label>
+      <select name="verified_options" id="verified_options" style="margin-top: 20px; margin-bottom: 20px">
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+      <br>
+      <label for="category"> Category </label>
+      <select name="category_options" id="category_options">
+        <option value="Apparel">Apparel</option>
+        <option value="Automotive ">Automotive</option>
+        <option value="Baby">Baby</option>
+        <option value="Beauty">Beauty</option>
+        <option value="Books">Books</option>
+        <option value="Camera">Camera</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Grocery">Grocery</option>
+        <option value="Health & Personal Care">Health & Personal Care</option>
+        <option value="Home">Home</option>
+        <option value="Home Entertainment">Home Entertainment</option>
+        <option value="Home Improvement">Home Improvement</option>
+        <option value="Jewelry">Jewelry </option>
+        <option value="Kitchen">Kitchen</option>
+        <option value="Lawn and Garden">Lawn and Garden</option>
+        <option value="Luggage">Luggage</option>
+        <option value="Musical Instruments">Musical Instruments</option>
+        <option value="Office Products">Office Products </option>
+        <option value="Outdoors">Outdoors</option>
+        <option value="PC ">PC</option>
+        <option value="Pet Products">Pet Products </option>
+        <option value="Shoes">Shoes</option>
+        <option value="Sports">Sports</option>
+        <option value="Tools ">Tools</option>
+        <option value="Toys">Toys</option>
+        <option value="Video DVD">Video DVD</option>
+        <option value="Video Games">Video Games</option>
+        <option value="Watches">Watches </option>
+        <option value="Wireless">Wireless</option>
+      </select>
+
+
+
+    <br>
+    <button type="submit" class="btn btn-primary btn-block btn-large" style="margin-top: 40px;">Predict</button></a>
+
+    </form>
+
+
+    {{ prediction_text }}
+
+    <br>
+    <br>
+
+
+  </div>
+
+
+</body>
+
+</html>

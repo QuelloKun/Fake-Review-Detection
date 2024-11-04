@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login form</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../static/css/sandy.css">
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+		 <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+        function login(){
+        var uname = document.getElementById("uname").value;
+        var pwd = document.getElementById("pwd").value;
+
+	if(uname == "admin" && pwd == "admin")
+	{
+	  alert("Login Success!");
+	  
+	  window.location = "{{url_for('index')}}";
+	  return false;
+	}
+	else
+	{
+	alert("Invalid Credentials!")
+	}
+        }
+    </script>
+	
+</head>
+
+    </head>
+
+   <body id="page-top">
+
+   
+ 
+
+  
+  <section class="page-section portfolio" id="portfolio">
+    <div class="container">
+      <br>
+	  <br>
+      
+      <div class="login-title text-center">
+	   <div class="row">            
+     
+                            
+                     
+             <h2><span><strong>ADMIN <strong>LOGIN </strong></strong></span></h2>
+                     </div>
+					 </div>
+      
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      
+      <div class="row">
+
+        
+        <div class="col-md-6 col-lg-4" style="margin-left:380px">
+		 <div class="control-group">
+			      <!-- Username -->
+				 
+			      <label class="control-label"   for="username"><b>Username</b></label>
+			      <div class="controls">
+			        <input type="text" id="uname" name="uname" placeholder="" class="form-control">
+			       
+				  </div>
+			    </div>
+			    <div class="control-group">
+			      <!-- Password-->
+				  
+			      <label class="control-label"  for="password"><b>Password</b></label>
+			      <div class="controls">
+			        <input type="password" id="pwd" name="pwd" placeholder="" class="form-control">
+			      
+				  </div>
+			    </div>
+			    <div class="control-group">
+			      <!-- Button -->
+				  <br>
+			      <div class="controls">
+				   
+			        <input type="button" class="btn btn-success" value="Login" style="margin-left: 150px" onclick="login()">
+			      
+				  </div>
+			    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>

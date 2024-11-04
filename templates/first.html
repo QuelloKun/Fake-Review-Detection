@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fake Review Detection Using Machine Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="static/css/bootstrap.css">
+  <link rel="stylesheet" href="static/css/custom.css">
+  <link rel="stylesheet" href="static/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <script src="static/js/jquery-1.12.0.js"></script>
+  <script src="static/js/bootstrap.js"></script>
+  <script src="static/js/main.js"></script>
+</head>
+<body>
+<div class="wrapper">
+
+  <nav class="navbar navbar-default navbar-fixed-top" id="menu">
+    <div class="container nopadding">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                  <a href="{{url_for('login')}}">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    LOGIN</a>
+                </li>
+                 
+              </ul>
+        </div>
+    </div>
+  </nav>
+
+<div class="container-fluid">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        
+          <img src="static/img/titleimage.jpg" alt="Image">
+        </div>
+
+          
+
+            
+          </div>
+   
+</div>
+</div>
+  <div class="container text-center">
+    <h3>Fake Review Detection Using Machine Learning</h3><br>
+    <h4 class="text-color">ABSTRACT</h4>
+      <p> With the advent of E-commerce, many products are being sold online in a global marketplace. People can buy, sell and leave feedback in the form of a review for other customers to see and make an informed decision about purchasing a particular product. Due to his, customers are increasingly relying on product reviews for information. Reviews have a direct impact on the sales of a product. But fake reviews, on the other hand, reduce the value of online reviews by painting an untruthful picture of product quality. Thus, people get the wrong idea when they come across such a review. As a result, fake review detection is required. This paper is aimed at developing a machine learning model that can detect a fake review from a real one by using review and reviewer centric features which is then integrated with a web application.</p>
+      <p>Our project introduces some semi-supervised and supervised machine learning methods to detect / predict fake online reviews given review Text and other attributes as well as compares the efficiency of both techniques on a dataset containing amazon reviews.</p>
+
+    
+  </div>
+
+</div>
+</body>
+</html>
