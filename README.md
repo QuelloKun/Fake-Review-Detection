@@ -56,6 +56,6 @@ Follow these steps to run the fake review detection system:
       * **Username:** `admin`
       * **Password:** `admin`
     <!-- end list -->
-    8.  **Input Review Details:** After logging in, you'll see fields for "review text," "rating," "verified purchase," and "category."
-    9.  **Predict:** Fill in the fields with your desired review content and click the "Predict" button to view the output.
-    10. **View Results:** The system will then indicate whether the entered review is fake or legitimate.
+8.  **Input Review Details:** After logging in, you'll see fields for "review text," "rating," "verified purchase," and "category."
+9.  **Predict:** Fill in the fields with your desired review content and click the "Predict" button to view the output.
+10. **View Results:** The system will then indicate whether the entered review is fake or legitimate.
