@@ -1,48 +1,61 @@
-FAKE REVIEW DETECTION USING MACHINE LEARNING
-********************************************
+# Fake Review Detection Using Machine Learning
 
-SYSTEM REQUIREMENTS
-*******************
-Operating System: Windows 7 or higher
-RAM: 4GB or higher
+-----
 
-Libraries
-*********
-pandas(1.4.2)
-scikit-learn(1.0.2)
-nltk(3.7)
-pickle(4.0)
-numpy(1.22.3)
-matplotlib(3.5.1)
-textstat(0.7.3)
-flask(2.1.1)
+## System Requirements
 
-NLTK specific downloads (should work while running the project. run this if it only if project doesnt work normally)
-***********************
+  * **Operating System:** Windows 7 or higher
+  * **RAM:** 4GB or higher
+
+-----
+
+## Libraries
+
+The following Python libraries are required:
+
+  * **pandas:** 1.4.2
+  * **scikit-learn:** 1.0.2
+  * **nltk:** 3.7
+  * **pickle:** 4.0
+  * **numpy:** 1.22.3
+  * **matplotlib:** 3.5.1
+  * **textstat:** 0.7.3
+  * **flask:** 2.1.1
+
+-----
+
+## NLTK Downloads
+
+If the project doesn't run normally, you might need to manually download these NLTK components:
+
+```python
 nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
+```
 
-EXECUTION
-*********
-1.Open the command prompt and check whether all the required libraries,packages are installed in the system.
+-----
 
-2.Navigate to the "Fake Review Detection/Source Code" directory from cmd using the cd command and press enter.
+## Execution Guide
 
-3.Now type in "python app2.py" to execute the program.
+Follow these steps to run the fake review detection system:
 
-4.A development server is started which happens to be running at the address: http://127.0.0.1:5000/
-
-5.Paste the address in the browser and click enter.
-
-6.You'll be directed to a web page which shows the title of our project and abstract.
-
-7.Click on login on the top right corner of the page.
-
-8.Enter credentials username: admin & password: admin and press login to continue.
-
-9.We see the following fields: review text, rating, verified purchase & category.
-
-10.Now, the user can fill up the fields with the review content of his choice and press predict to view the output.
-
-11.It can now be seen whether the review is fake or legitimate.
+1.  **Verify Libraries:** Open your command prompt and confirm that all the required libraries and packages listed above are installed on your system.
+2.  **Navigate to Source Code:** Use the `cd` command in your command prompt to navigate to the "Fake Review Detection/Source Code" directory.
+    ```bash
+    cd "Fake Review Detection/Source Code"
+    ```
+3.  **Execute the Program:** Type the following command and press Enter to start the program:
+    ```bash
+    python app2.py
+    ```
+4.  **Access the Web Application:** A development server will start, typically running at: `http://127.0.0.1:5000/`
+5.  **Open in Browser:** Paste this address into your web browser and press Enter. You'll be directed to a web page displaying the project title and abstract.
+6.  **Login:** Click on the "Login" link located in the top-right corner of the page.
+7.  **Enter Credentials:** Use the following credentials to log in:
+      * **Username:** `admin`
+      * **Password:** `admin`
+    <!-- end list -->
+    8.  **Input Review Details:** After logging in, you'll see fields for "review text," "rating," "verified purchase," and "category."
+    9.  **Predict:** Fill in the fields with your desired review content and click the "Predict" button to view the output.
+    10. **View Results:** The system will then indicate whether the entered review is fake or legitimate.
