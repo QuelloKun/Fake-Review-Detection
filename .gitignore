@@ -1,21 +1,91 @@
-node_modules/
-
 # Python
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
-env/
-venv/
+*.so
+*.egg
 *.egg-info/
+dist/
+build/
+.Python
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+.conda/
+.env
+
+# Flask
+instance/
+.webassets-cache
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Machine Learning & Data
+*.pickle
+*.pkl
+!classifierx.pickle
+*.h5
+*.hdf5
+*.model
+*.joblib
+*.csv
+*.txt
+*.json
+*.xlsx
+*.xls
+
+# NLTK Data (downloaded at runtime)
+nltk_data/
 
 # Logs
 *.log
+logs/
 
-# Environment variables
+# OS Generated
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+
+# Node.js (if any frontend tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Temporary files
+*.tmp
+*.bak
+*.backup

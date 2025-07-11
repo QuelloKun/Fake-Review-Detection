@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, url_for, Markup, jsonify
+from flask import Flask, render_template, request, url_for, jsonify
+from markupsafe import Markup
 import pickle
 import pandas as pd
 import numpy as np
