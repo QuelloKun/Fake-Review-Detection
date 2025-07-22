@@ -1,24 +1,102 @@
-node_modules/
-
 # Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
 env/
 venv/
+ENV/
+env.bak/
+venv.bak/
 new_venv/
-*.egg-info/
 
-# Windows
-Thumbs.db
+# Database
+*.db
+*.sqlite3
+instance/
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ML Models (keep in repo for this project)
+# *.pkl
+# *.pickle
+
+# Data files
+*.csv
+*.txt
+*.json.bak
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 ehthumbs.db
-Desktop.ini
+Thumbs.db
 
 # Logs
 *.log
+logs/
 
-# Environment variables
-.env
-.venv/
-*.pickle
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/node_modules/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.env*.local
+frontend/.vercel
+
+# Testing
+coverage/
+.coverage
+.pytest_cache/
+.tox/
+
+# Docker
+.docker/
+
+# Alembic
+alembic/versions/
+
+# Cache
+.cache/
+.parcel-cache/

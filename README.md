@@ -1,140 +1,235 @@
-# Fake Review Detection - FastAPI Migration
+# Fake Review Detection System
 
-## Overview
-This project has been successfully migrated from Flask to FastAPI, providing improved performance, modern API capabilities, and better development experience.
+A modern full-stack application that uses machine learning to detect fake Amazon reviews with high accuracy.
+
+## 🚀 Features
+
+- **AI-Powered Detection**: Advanced ML model using NLTK and scikit-learn
+- **Modern Frontend**: React/Next.js with TypeScript and Tailwind CSS
+- **Fast API Backend**: FastAPI with async PostgreSQL database
+- **Real-time Analysis**: Instant review classification with confidence scores
+- **Database Storage**: All predictions saved for analysis and tracking
+- **Professional UI**: Clean, responsive design with modern components
+
+## 🏗️ Architecture
+
+```
+├── app/                    # FastAPI Backend
+│   ├── api/v1/            # API routes and schemas
+│   ├── core/              # Configuration and security
+│   ├── crud/              # Database operations
+│   ├── db/                # Database setup
+│   ├── models/            # SQLAlchemy models
+│   └── services/          # ML service
+├── frontend/              # Next.js Frontend
+│   └── src/
+│       └── app/           # Next.js App Router
+├── models/                # ML model files
+├── alembic/              # Database migrations
+└── requirements.txt       # Python dependencies
+```
+
+## 🛠️ Tech Stack
+
+### Backend
+- **FastAPI** - Modern Python web framework
+- **PostgreSQL** - Production database
+- **SQLAlchemy** - ORM with async support
+- **Alembic** - Database migrations
+- **NLTK & scikit-learn** - Machine learning pipeline
+
+### Frontend
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first styling
+- **Modern Components** - Clean, responsive UI
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.8+
-- Virtual environment (recommended)
+- Python 3.12+
+- Node.js 18+
+- PostgreSQL 15+
+- Git
 
-### Installation
-
-1. **Activate virtual environment**
+### 1. Clone Repository
 ```bash
-source new_venv/bin/activate
+git clone <repository-url>
+cd Fake-Review-Detection\ v2
 ```
 
-2. **Install dependencies**
+### 2. Backend Setup
 ```bash
+# Create virtual environment
+python -m venv new_venv
+source new_venv/bin/activate  # Linux/Mac
+# new_venv\Scripts\activate   # Windows
+
+# Install dependencies
 pip install -r requirements.txt
+
+# Start PostgreSQL (using Docker)
+docker compose up -d postgres redis
+
+# Run database migrations
+alembic upgrade head
+
+# Start FastAPI server
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-3. **Run the application**
+### 3. Frontend Setup
 ```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+# In a new terminal
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1 npm run dev -- --port 3000
 ```
 
-## 📁 Project Structure
-```
-Fake-Review-Detection v2/
-├── main.py                 # FastAPI application
-├── classifierx.pickle    # ML model file
-├── templates/              # HTML templates
-│   ├── first.html         # Home page
-│   ├── index.html         # Prediction form
-│   └── login.html         # Login page
-├── static/                # CSS, JS, images
-└── requirements.txt       # Dependencies
-```
+### 4. Access Applications
+- **Frontend**: http://localhost:3000
+- **API Docs**: http://localhost:8000/docs
+- **API Health**: http://localhost:8000/api/v1/health
 
-## 🌐 Endpoints
+## 📱 Usage
 
-### Web Interface
-- `GET /` - Home page (first.html)
-- `GET /login` - Login page
-- `GET /index` - Prediction form
-- `POST /predict` - Handle prediction form submission
+1. **Open the frontend** at http://localhost:3000
+2. **Enter review details**:
+   - Review text (minimum 10 characters)
+   - Product rating (1-5 stars)
+   - Verified purchase status
+   - Product category
+3. **Click "Analyze Review"** to get instant results
+4. **View prediction**: Real or Fake with confidence indicator
 
-### REST API
-- `GET /api/predict` - Predict fake/real review
-- `GET /health` - Health check
-- `GET /docs` - Interactive API documentation (Swagger UI)
-- `GET /redoc` - Alternative API documentation
+## 🔧 Configuration
 
-## 🔧 API Usage
+### Environment Variables
 
-### Web Form Submission
-Navigate to http://localhost:8000 and use the web interface.
+Create a `.env` file in the root directory:
 
-### REST API Example
 ```bash
-# Health check
-curl http://localhost:8000/health
+# Database
+DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/fake_reviews
+REDIS_URL=redis://localhost:6379/0
 
-# Predict review
-curl -X GET "http://localhost:8000/api/predict?review_text=Great%20product&rating=5&verified_purchase=Y&category=Electronics"
+# Security
+SECRET_KEY=your-super-secret-key-change-this-in-production
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+# ML Model
+MODEL_PATH=./models/
+MODEL_NAME=classifierx.pickle
+CACHE_TTL=3600
+
+# API
+API_V1_STR=/api/v1
+PROJECT_NAME=Fake Review Detection API
+VERSION=1.0.0
+DEBUG=True
+
+# Server
+HOST=0.0.0.0
+PORT=8000
 ```
 
-### API Parameters
-- `review_text` (string): The review text to analyze
-- `rating` (integer): Product rating (1-5)
-- `verified_purchase` (string): "Y" or "N"
-- `category` (string): Product category
+## 🐳 Docker Deployment
 
-### Response Format
-```json
-{
-  "prediction": "Real",
-  "confidence": 0.95
-}
-```
-
-## 🛠️ Development
-
-### Adding New Features
-1. Edit `main.py` to add new endpoints
-2. Update templates in `templates/` directory
-3. Add new static files to `static/` directory
-
-### Testing
 ```bash
-# Run with auto-reload
-uvicorn main:app --reload
+# Start all services
+docker compose up -d
 
-# Run on different port
-uvicorn main:app --port 8001
+# View logs
+docker compose logs -f
+
+# Stop services
+docker compose down
 ```
 
-## 🔍 Troubleshooting
+## 🧪 API Endpoints
 
-### Port Already in Use
+### Health Check
 ```bash
-# Kill process on port 8000
-lsof -ti:8000 | xargs kill -9
-
-# Run on different port
-uvicorn main:app --port 8001
+GET /api/v1/health
 ```
 
-### Missing Dependencies
+### Predictions
 ```bash
-pip install -r requirements.txt
+POST /api/v1/predictions/
+GET /api/v1/predictions/
+GET /api/v1/predictions/{id}
 ```
 
-### Model File Issues
-Ensure `classifierx.pickle` exists in the project root directory.
+### Authentication
+```bash
+POST /api/v1/auth/register
+POST /api/v1/auth/login
+```
 
-## 📊 Performance Improvements
-- **Async processing**: Non-blocking request handling
-- **Type safety**: Pydantic validation
-- **Auto-documentation**: Interactive API docs
-- **Better error handling**: Structured error responses
+## 🔍 ML Model Details
 
-## 🔄 Migration Notes
-- All Flask routes have been converted to FastAPI
-- Templates updated for FastAPI compatibility
-- Static file serving configured
-- Model loading optimized
+The system uses a trained machine learning pipeline that analyzes:
+- **Review text patterns** using NLTK preprocessing
+- **Rating consistency** with review sentiment
+- **Purchase verification** status
+- **Product category** context
+- **Writing style** indicators
 
-## 🌟 Features
-- ✅ Fake review detection using ML
-- ✅ REST API with documentation
-- ✅ Web interface
-- ✅ Health monitoring
-- ✅ Error handling
-- ✅ Static file serving
+**Model Performance**:
+- High accuracy on Amazon review datasets
+- Confidence scoring for each prediction
+- Continuous learning capability
 
-## 📞 Support
-For issues or questions, check the API documentation at http://localhost:8000/docs
+## 🧑‍💻 Development
+
+### Running Tests
+```bash
+# Backend tests
+pytest
+
+# Frontend tests
+cd frontend && npm test
+```
+
+### Code Quality
+```bash
+# Python linting
+flake8 app/
+black app/
+
+# TypeScript checking
+cd frontend && npm run lint
+```
+
+## 📊 Database Schema
+
+- **Users**: User accounts and authentication
+- **Predictions**: Review analysis results with metadata
+- **Alembic**: Migration version tracking
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+## 📜 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🔗 Links
+
+- **Live Demo**: [Coming Soon]
+- **API Documentation**: http://localhost:8000/docs
+- **Frontend**: http://localhost:3000
+
+---
+
+**Built with ❤️ using FastAPI, Next.js, and Machine Learning**
