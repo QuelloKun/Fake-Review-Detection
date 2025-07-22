@@ -7,6 +7,7 @@ __pycache__/
 *.pyd
 env/
 venv/
+new_venv/
 *.egg-info/
 
 # Windows
@@ -19,3 +20,5 @@ Desktop.ini
 
 # Environment variables
 .env
+.venv/
+*.pickle
